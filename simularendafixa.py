@@ -203,13 +203,13 @@ with right:
         mime="text/csv",
         width="stretch",
     )
-    st.download_button(
-        label="Baixar código completo (.zip)",
-        data=source_zip_bytes(),
-        file_name="simulador-renda-fixa-streamlit.zip",
-        mime="application/zip",
-        width="stretch",
-    )
+    #st.download_button(
+    #    label="Baixar código completo (.zip)",
+    #    data=source_zip_bytes(),
+    #   file_name="simulador-renda-fixa-streamlit.zip",
+    #   mime="application/zip",
+    #    width="stretch",
+    #)
     st.info(
         "A simulação usa juros compostos e serve como estimativa. "
         "Confira a rentabilidade, liquidez, impostos e taxas do produto escolhido "
