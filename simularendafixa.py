@@ -79,23 +79,22 @@ def build_projection(
 def csv_bytes(projection: pd.DataFrame) -> bytes:
     return projection.to_csv(index=False).encode("utf-8-sig")
 
-
-def source_zip_bytes() -> bytes:
+#def source_zip_bytes() -> bytes:
     """Package the source files so the user can download the complete app."""
-    project_root = Path(__file__).resolve().parent
-    files_to_include = [
-        Path("app.py"),
-        Path("requirements.txt"),
-        Path("README.md"),
-        Path(".streamlit/config.toml"),
-    ]
-    buffer = io.BytesIO()
-    with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as archive:
-        for relative_path in files_to_include:
-            file_path = project_root / relative_path
-            if file_path.exists():
-                archive.write(file_path, arcname=relative_path.as_posix())
-    return buffer.getvalue()
+#    project_root = Path(__file__).resolve().parent
+#    files_to_include = [
+#        Path("app.py"),
+#       Path("requirements.txt"),
+#        Path("README.md"),
+#        Path(".streamlit/config.toml"),
+#    ]
+#    buffer = io.BytesIO()
+#    with zipfile.ZipFile(buffer, "w", zipfile.ZIP_DEFLATED) as archive:
+#        for relative_path in files_to_include:
+#            file_path = project_root / relative_path
+#            if file_path.exists():
+#                archive.write(file_path, arcname=relative_path.as_posix())
+#    return buffer.getvalue()
 
 
 st.title("Quanto sua reserva pode crescer?")
